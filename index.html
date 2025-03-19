@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
+    <!-- Initializing Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Domine:wght@400..700&family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Capriola&family=Irish+Grover&display=swap" rel="stylesheet">
+
+    <!-- Initializing Font Awesome -->
+    <script src="https://kit.fontawesome.com/abb2e2c90b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header-container w-full flex flex-col">
+        <div class="header top-0 flex flex-row justify-between items-center pt-5 px-8 py-[.25rem]">
+            <div class="logo p-0 w-55">
+                <a href="./index.html" tabindex="1"><img class="w-55 h-auto object-cover"src="./Images/Haribo-logo.png" alt="Haribo Logo"></a>
+            </div>
+            <div class="nav-bar flex gap-20 p-4 items-center justify-around text-[#353238] text-[.75rem]">
+                <!-- Couldn't figure out how I wanted this section, because I wanted to use a nav tag, but I couldn't figure out how to use it with the flexbox formatting. So I asked Copilot "Can I add a hrefs to the h2 tags in the nav-bar div?" and it provided me with this as an option. -->
+                <div class="nav-bar-links flex flex-row gap-20 p">
+                    <a href="./index.html" tabindex="2"><h2>Products</h2></a>
+                    <a href="./index.html" tabindex="3"><h2>About Us</h2></a>
+                    <a href="./index.html" tabindex="4"><h2>Contact</h2></a>
+                </div>
+                <div class="shopping-cart-container flex justify-center h-16">
+                    <a href="./index.html" tabindex="5"><div class="shopping-cart-icon flex justify-center items-center w-8">
+                        <!-- Using Font Awesome shopping-cart as main shopping cart -->
+                        <i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                </div>
+                <div class="mascot-icon">
+                    <img src="./Images/haribo-bear.png" alt="Haribo Bear" width=40px height=auto>
+                </div>
+            </div>
+        </div>
+        <div class="custom-shape-divider-bottom-1742328424">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M741,116.23C291,117.43,0,27.57,0,6V120H1200V6C1200,27.93,1186.4,119.83,741,116.23Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Main Product Page Content -->
+    <main class="bg-[#f8f9fa] h-[175vh] flex flex-col margin-0 p-0">
+        <!-- Overall container for all product page content -->
+        <section class="card-container flex h-[46%] flex-nowrap justify-center flex-row p-20 pt-28 gap-8">
+            <!-- Product image -->
+            <div class="product-img-card">
+                <img src="./Images/happy-cola.png" alt="Haribo Gold Bears" width=350px height=auto>
+            </div>
+            <!-- Product information, quantity, and options -->
+            <section class="interactive-container flex flex-col justify-evenly items-center gap-1 w-2/4">
+                <div class="product-info-card flex flex-row w-full">
+                    <div class="description-card flex flex-col justify-items-center items-start text-center w-full p-4 gap-4">
+                        <h1 class="text-[2rem] font-[150] text-center">Happy-Cola</h1>
+                        <p>Treat yourself to a fan favorite! Bundle and save!</p>
+                    </div>
+                </div>
+                <!-- Price Container and add to cart -->
+                <div class="review-price-card flex flex-row justify-items-center items-center w-full">
+                    <div class="price-container flex flex-row justify-center items-center w-full">
+                        <div class="price-card flex flex-row justify-center items-center w-full">
+                            $1.99
+                        </div>
+                        <div class="reviews-card flex flex-row flex-wrap justify-center items-center w-full gap-1">
+                            <div class="review-container w-full justify-center items-center">
+                                <!-- Using Font Awesome classic solid star icons and empty star icons as the stars for the reviews -->
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Using Font Awesome add-to-cart icon as the shopping cart to add to cart -->
+                    <button tabindex="6" class="cart-button flex justify-center items-center w-full"><div class="add-to-cart-icon flex justify-center"><i class="fa-solid fa-cart-shopping"></i></div>
+                    </button>
+                </div>
+                <!-- Quantity Selector with cards of options for quantity -->
+                <div class="quantity-container flex flex-col w-full gap-4 flex-wrap">
+                    <div class="quantity-selector-container flex flex-row justify-center items-center w-full flex-wrap gap-4">
+                        <div id="pack-of-3">
+                            <img src="./Images/pack-of-3.png" alt="3 Pack of Gummies" width=125px height=auto tabindex="7">
+                            <p>3 Pack</p>
+                        </div>
+                        <div id="pack-of-6">
+                            <img src="./Images/pack-of-6.png" alt="6 Pack of Gummies" width=200px height=auto tabindex="8">
+                            <p>6 Pack</p>
+                        </div>
+                        <div id="pack-of-24">
+                            <img src="./Images/pack-of-24.png" alt="24 Pack of Gummies" width=100px height=auto tabindex="9">
+                            <p>24 Pack</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        
+        <!-- Suggested Products section -->
+        <section class="related-products-section flex flex-col justify-center items-center gap-10">
+            <h2>Customers who bought Happy-Cola also bought:</h2>
+            <div class="related-products-container">
+                <img src="./Images/goldbears-clip.png" alt="Goldbears" tabindex="10">
+                <img src="./Images/twin-snakes-clip.png" alt="Twin Snakes" tabindex="11">
+                <img src="./Images/frogs-clip.png" alt="Frogs" tabindex="12">
+                <img src="./Images/goldbears-sour-clip.png" alt="Sour Goldbears" tabindex="13">
+                <img src="./Images/smurfs-clip.png" alt="Smurfs" tabindex="14">
+                <img src="./Images/red-white-blue-clip.png" alt="Red, White, and Blue Gummis" tabindex="15">
+                <img src="./Images/fizzy-cola-clip.png" alt="Fizzy Cola" tabindex="16">
+            </div>
+            <h2>Also, don't wait! Check out our NEW limited edition FOOTBALL MIX while it's still football season!</h2>
+            <div class="limited-edition-product-container flex flex-row justify-around align-center p-4 m-0 m-auto w-fit">
+                <img src="./Images/football-mix-clip.png" alt="Football Mix" tabindex="17">
+            </div>
+        </section>
+    </main>
+
+    <!-- Looping Gummie Bear Video -->
+    <section class="video-container w-full flex flex-col justify-center items-center">
+        <video class="gummie-bear-video object-cover" width=100% height=auto loop muted autoplay>
+            <source src="./Images/gummy-bear-vid.mp4" type="video/mp4" alt="Looping Gummie Bear Video">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- Contact Us Form - had ChatGPT provide me with the general layout for this, and then I edited it. ChatGPT actually provided very bare bones, I added all of the divs, the formatting, and the customization as far as inputs go. So I should have just coded this whole section myself but it did give me a good start. -->
+    <section class="contact-form-container w-full flex flex-col justify-center items-center p-7 gap-8">
+        <h2>Contact Us</h2>
+        <p>Have a question or comment? Fill out the form below and we'll get back to you as soon as possible!</p>
+        <div class="contact-form-subcontainer flex flex-row gap-16">
+            <form action="#" method="post">
+                <div class="contact-form w-max flex flex-col justify-center items-center gap-4">
+                    <div class="full-name bg-blue-50 rounded-md w-full">
+                        <label class="font-bold mb-2" for="name">*Full Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required tabindex="18">
+                    </div>
+                    
+                    <div class="email bg-blue-50 rounded-md w-full">
+                        <label class="font-bold mb-2" for="email">*Email Address:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required tabindex="19">
+                    </div>
+                
+                    <div class="phone bg-blue-50 rounded-md w-full">
+                        <label class="font-bold mb-2" for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your number" tabindex="20">
+                    </div>
+    
+                    <div class="message bg-blue-50 rounded-md w-full">
+                        <label class="font-bold mb-2" for="message">*Your Message:</label>
+                        <div class="message-content w-full">
+                            <textarea class="w-full" id="message" name="message" placeholder="Write your message here" rows="4" tabindex="21"></textarea>
+                        </div>
+                    </div>
+                
+                    <div class="subscribe w-full">
+                        <label class="font-bold mb-2" for="subscribe">
+                            <input type="checkbox" id="subscribe" name="subscribe" tabindex="22"> Subscribe to our newsletter
+                        </label>
+                    </div>
+                
+                    <button type="submit" tabindex="23">Send Message</button>
+                </div>
+            </form>
+            <div class="animated-svg">
+                <dotlottie-player src="https://lottie.host/8acaf845-e119-4494-afbd-7bc623fd74be/cFt7bu4M6Y.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Scroll to top button -->
+    <div class="scroll-to-top fixed bottom-[40px] right-[40px]">
+        <a href="#top" tabindex="25"><i class="fa-regular fa-circle-up"></i></a>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer-container flex flex-col">
+        <div class="custom-shape-divider-top-1742328585">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M741,116.23C291,117.43,0,27.57,0,6V120H1200V6C1200,27.93,1186.4,119.83,741,116.23Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <div class="footer bottom-0 w-full flex flex-row items-center">
+            <div class="footer-content flex flex-col justify-center items-center w-full px-8 py-4">
+                <div class="copyright">
+                    <p>&copy; 2025 Haribo. All Rights Reserved.</p>
+                </div>
+                <div class="footer-logo p-0 w-fit">
+                    <a href="./index.html" tabindex="24">
+                        <img src="./Images/Haribo-logo.png" alt="Haribo Logo" width=150px height=50px>
+                    </a>
+                </div>
+                <div class="footer-mascot">
+                    <img src="./Images/haribo-bear.png" alt="Haribo Bear" width=40px height=auto>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+<!-- 
+
+CHATGPT/AI USE:
+ 
+I clearly marked in my code where I used ChatGPT or the integrated Copilot in VS Code to help me with certain parts of the project. Several other times I tried to use ChatGPT to help me debug my code or to help me know how to try to implement interactivity, especially with a potential image gallery for the product image, but it actually didn't help me at all and I needed to figure out the bugs in my code myself. In the future I will probably try to use AI more, but less for the entire element and more for helping me with advice on how to implement certain things. Especially with the cleanliness of my code, which I think could be better sometimes.
+
+-->

@@ -1,0 +1,569 @@
+/* Setting up CSS Variables. I use these throughout the styles.css file. I couldn't figure out how to implement them in tailwind. */
+:root {
+  --font-family-header: 'Capriola', sans-serif;
+  --main-font-color: black;
+  --card-bg-color: white;
+  --button-color: #FF9902;
+  --main-bg-color: #F9F9F9;
+  --box-shadow-light: black 0px 0px 4px 0px;
+  --main-box-shadow-light: #FF9902 0px 0px 4px 0px;
+  --transition-property: transform 0.3s ease-in-out;
+  --transform-scale: scale(1.1);
+  --transform-scale-2: scale(1.05);
+  --med-rounded-corner: 1rem;
+  --small-rounded-corner: .5rem;
+  --large-rounded-corner: 2rem;
+}
+
+/* Animations */
+@keyframes shopping-bounce {
+  0% {
+    transform: translateY(0);
+    scale: 1;
+  }
+  33% {
+    transform: translateY(-10px);
+  }
+  66% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes logo-wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  33% {
+    transform: rotate(10deg);
+  }
+  66% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Setting up html and body elements, so that I can format easier. Smooth scrolling so when you click to go back to the top, it is smooth instead of immediate */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+
+/* Header container styles */
+.header-container {
+  background: rgb(249,87,176);
+  background: linear-gradient(166deg, rgba(249,87,176,1) 6%, rgba(235,125,13,1) 89%);
+}
+
+/* Adding font-family in CSS because I couldn't figure out how to use variables in tailwind. Adding hover property on the h2 navigation tabs */
+.header {
+  font-family: var(--font-family-header);
+
+  h2:hover {
+    transform: var(--transform-scale);
+  }
+}
+
+.nav-bar-links {
+  background-color: var(--card-bg-color);
+  border-radius: var(--med-rounded-corner);
+  box-shadow: var(--box-shadow-light);
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Asked Copilot how to format these a tags because I forgot how to simply remove decorations of blue color and underline. This is what it gave me. */
+.nav-bar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-bar a:hover {
+  color: inherit;
+}
+
+/* Container for shopping-cart svg from font awesome */
+.shopping-cart-container {
+  display: flex;
+  justify-content: center;
+  height: 4rem;
+}
+
+.shopping-cart-container:hover {
+  animation: shopping-bounce 0.5s ease-in-out forwards;
+}
+
+.shopping-cart-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+}
+
+/* Formatting shopping-cart svg */
+.shopping-cart-icon i {
+  color: var(--main-font-color);
+  font-size: 1.5rem;
+}
+
+.mascot-icon {
+  animation: logo-wave 4s ease-in-out infinite;
+}
+
+.custom-shape-divider-bottom-1742328424 {
+  position: relative;
+  display: flex;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1742328424 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 51px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1742328424 .shape-fill {
+  fill: var(--main-bg-color);
+}
+
+/* Main Product Page Styling */
+main {
+  color: var(--main-font-color);
+}
+
+/* Asked ChatGPT to help me with some CSS code that would allow the image to zoom in a bit when the user hovers over the image. I am applying this code to all images in the page to allow for more user interactivity. */
+img {
+  object-fit: cover;
+  transition: var(--transition-property);
+}
+
+img:hover {
+  transform: var(--transform-scale);
+}
+
+.custom-shape-divider-top-1742326942 {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1742326942 svg {
+  position: relative;
+  display: block;
+  width: calc(144% + 1.3px);
+  height: 66px;
+}
+
+.custom-shape-divider-top-1742326942 .shape-fill {
+  fill: #FFFFFF;
+}
+
+/* Product image */
+.product-img-card {
+  background-color: var(--button-color);
+  border-radius: var(--small-rounded-corner);
+  padding: 2rem;
+  box-shadow: var(--button-color) 0px 0px 10px;
+  
+  img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Formatting price container */
+.price-container {
+  background-color: var(--button-color);
+  border: 1px solid var(--button-color);
+  border-radius: var(--large-rounded-corner);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: .65rem;
+  color: var(--card-bg-color);
+  box-shadow: var(--main-box-shadow-light);
+}
+
+/* Formatting price card in description. Also formatting the button to have a box-shadow when hovered on. */
+.price-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  font-family: var(--font-family-header);
+  font-size: 1.5rem;
+  color: white;
+}
+
+.review-container i {
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* Formatting button */
+.cart-button {
+  background-color: var(--button-color);
+  border: 1px solid var(--button-color);
+  border-radius: var(--large-rounded-corner);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  gap: .5rem;
+  padding: 1rem;
+  color: var(--card-bg-color);
+  font-size: .88rem;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: var(--main-box-shadow-light);
+}
+
+.cart-button:hover {
+  /* box-shadow: black 0px 0px 5px; */
+  /* transform: var(--transform-scale-2); */
+  cursor: pointer;
+  animation: pulse 1s infinite;
+}
+
+/* Formatting shopping-cart svg again for the add to cart button */
+.add-to-cart-icon i {
+  color: var(--card-bg-color);
+  font-size: 1.5rem;
+}
+
+/* Formatting all h2s */
+h2 {
+  font-size: 1.5rem;
+  font-weight: 150;
+  align-self: center;
+  font-family: var(--font-family-header);
+}
+
+/* Formatting all h1s */
+h1 {
+  font-family: var(--font-family-header);
+}
+
+/* Formatting all ps. For some reason Carlito italic wasn't working for me on this page */
+p {
+  font-size: 1rem;
+  text-align: left;
+  font-family: var(--font-family-header);
+}
+
+/* Formatting all h4s */
+h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--font-family);
+}
+
+/* Formatting the quantity cards and images */
+#pack-of-3, #pack-of-6, #pack-of-24 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  padding: 1rem;
+  cursor: pointer;
+  background-color: var(--button-color);
+  border-radius: var(--med-rounded-corner);
+  box-shadow: var(--main-box-shadow-light);
+
+  p {
+    color: white;
+  }
+
+  img {
+    object-fit: contain;
+    width: auto;
+    height: 100px;
+  }
+
+  p {
+    font-size: .75rem;
+    font-weight: 500;
+  }
+}
+
+/* Formatting quantity cards on hover to give some interactivity */
+#pack-of-3:hover, #pack-of-6:hover, #pack-of-24:hover {
+  box-shadow: black 0px 0px 5px;
+  color: var(--main-font-color);
+}
+
+/* Formatting related products section to have Carlito */
+.related-products-section {
+  font-family: var(--font-family-header);
+}
+
+/* Formatting related products section to have good layout */
+.related-products-container {
+  display: flex;
+  background-color: var(--button-color);
+  padding: 1rem;
+  border-radius: var(--med-rounded-corner);
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  box-shadow: var(--main-box-shadow-light);
+  /* border: 5px solid purple; */
+
+  img {
+    height: 210px;
+    width: auto;
+  }
+}
+
+/* Formatting with Carlito */
+.limited-edition-product {
+  font-family: var(--font-family-header);
+}
+
+/* Formatting with vars */
+.limited-edition-product-container {
+  background-color: var(--button-color);
+  border-radius: var(--med-rounded-corner);
+  box-shadow: var(--main-box-shadow-light);
+
+  img {
+    height: 210px;
+    width: auto;
+  }
+}
+
+/* Formatting with vars */
+.contact-form-container {
+  font-family: var(--font-family);
+  background-color: var(--card-bg-color);
+
+  button {
+    background-color: var(--button-color);
+    border: 1px solid var(--button-color);
+    font-family: var(--font-family-header);
+    font-size: .5rem;
+    border-radius: var(--large-rounded-corner);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    margin: 1rem;
+    gap: .5rem;
+    padding: 1rem;
+    color: var(--main-font-color);
+    cursor: pointer;
+    box-shadow: black 0px 0px 2px;
+  }
+
+  button:hover {
+    box-shadow: black 0px 0px 5px;
+  }
+}
+
+/* Formatting scroll to top svg */
+.scroll-to-top i {
+  font-size: 2.3rem;
+  color: var(--main-font-color);
+  cursor: pointer;
+}
+
+.scroll-to-top i:hover {
+  transform: var(--transform-scale);
+}
+
+.footer-container {
+  background: rgb(249,87,176);
+  background: linear-gradient(166deg, rgba(249,87,176,1) 6%, rgba(235,125,13,1) 89%);
+}
+
+.custom-shape-divider-top-1742328585 {
+  position: relative;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1742328585 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 51px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1742328585 .shape-fill {
+  fill: #FFFFFF;
+}
+
+/* formatting footer logo */
+.footer-logo img{
+  width: 100px;
+  height: auto;
+}
+
+/* Formatting footer with carlito */
+.footer-content {
+  font-family: var(--font-family);
+}
+
+/* Responsive design elements */
+
+/* Small phones */
+@media (max-width: 480px) {
+  .related-products-container img {
+    height: 100px;
+  }
+
+  .limited-edition-product-container img {
+    height: 100px;
+  }
+
+  .limited-edition-product-container {
+    img {
+      height: 100px;
+    }
+  }
+
+  .contact-form-container {
+    button {
+      font-size: .5rem;
+    }
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  .related-products-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .related-products-container img {
+    height: 150px;
+  }
+
+  .limited-edition-product-container img {
+    height: 150px;
+  }
+
+  .limited-edition-product-container {
+    img {
+      height: 150px;
+    }
+  }
+
+  .contact-form-container {
+    button {
+      font-size: .75rem;
+    }
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .related-products-container img {
+    height: 180px;
+  }
+
+  .limited-edition-product-container img {
+    height: 180px;
+  }
+
+  .limited-edition-product-container {
+    img {
+      height: 180px;
+    }
+  }
+
+  .contact-form-container {
+    button {
+      font-size: .88rem;
+    }
+  }
+}
+
+/* Small Laptops */
+@media (max-width: 1280px) {
+  .related-products-container img {
+    height: 200px;
+  }
+
+  .limited-edition-product-container img {
+    height: 200px;
+  }
+
+  .limited-edition-product-container {
+    img {
+      height: 200px;
+    }
+  }
+
+  .contact-form-container {
+    button {
+      font-size: 1rem;
+    }
+  }
+}
+
+/* Desktops */
+@media (min-width: 1281px) {
+  .related-products-container img {
+    height: 210px;
+  }
+
+  .limited-edition-product-container img {
+    height: 210px;
+  }
+
+  .limited-edition-product-container {
+    img {
+      height: 210px;
+    }
+  }
+
+  .contact-form-container {
+    button {
+      font-size: 1.25rem;
+    }
+  }
+}
