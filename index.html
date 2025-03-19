@@ -137,31 +137,31 @@
     </section>
 
     <!-- Contact Us Form - had ChatGPT provide me with the general layout for this, and then I edited it. ChatGPT actually provided very bare bones, I added all of the divs, the formatting, and the customization as far as inputs go. So I should have just coded this whole section myself but it did give me a good start. -->
-    <section class="contact-form-container w-full flex flex-col justify-center items-center p-7 gap-8">
+    <section class="contact-form-container w-full flex flex-col justify-center items-center p-7 gap-4">
         <h2>Contact Us</h2>
         <p>Have a question or comment? Fill out the form below and we'll get back to you as soon as possible!</p>
-        <div class="contact-form-subcontainer flex flex-row gap-16">
+        <div class="contact-form-subcontainer flex flex-row gap-16 align-center justify-center">
             <form action="#" method="post">
                 <div class="contact-form w-max flex flex-col justify-center items-center gap-4">
                     <div class="full-name bg-blue-50 rounded-md w-full">
-                        <label class="font-bold mb-2" for="name">*Full Name:</label>
-                        <input type="text" id="name" name="name" placeholder="Enter your name" required tabindex="18">
+                        <label class="font-bold mb-2" for="name"></label>
+                        <input class="w-full" type="text" id="name" name="name" placeholder="Full name" required tabindex="18">
                     </div>
                     
                     <div class="email bg-blue-50 rounded-md w-full">
-                        <label class="font-bold mb-2" for="email">*Email Address:</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required tabindex="19">
+                        <label class="font-bold mb-2" for="email"></label>
+                        <input class="w-full" type="email" id="email" name="email" placeholder="Email address" required tabindex="19">
                     </div>
                 
                     <div class="phone bg-blue-50 rounded-md w-full">
-                        <label class="font-bold mb-2" for="phone">Phone Number:</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Enter your number" tabindex="20">
+                        <label class="font-bold mb-2" for="phone"></label>
+                        <input class="w-full" type="tel" id="phone" name="phone" placeholder="Phone number" tabindex="20">
                     </div>
     
                     <div class="message bg-blue-50 rounded-md w-full">
-                        <label class="font-bold mb-2" for="message">*Your Message:</label>
+                        <label class="font-bold mb-2" for="message"></label>
                         <div class="message-content w-full">
-                            <textarea class="w-full" id="message" name="message" placeholder="Write your message here" rows="4" tabindex="21"></textarea>
+                            <textarea class="w-full" id="message" name="message" placeholder="Your message here" rows="4" tabindex="21"></textarea>
                         </div>
                     </div>
                 
@@ -170,14 +170,13 @@
                             <input type="checkbox" id="subscribe" name="subscribe" tabindex="22"> Subscribe to our newsletter
                         </label>
                     </div>
-                
-                    <button type="submit" tabindex="23">Send Message</button>
                 </div>
             </form>
             <div class="animated-svg">
                 <dotlottie-player src="https://lottie.host/8acaf845-e119-4494-afbd-7bc623fd74be/cFt7bu4M6Y.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
             </div>
         </div>
+        <button type="submit" tabindex="23">Send Message</button>
     </section>
     
     <!-- Scroll to top button -->

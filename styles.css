@@ -251,8 +251,6 @@ img:hover {
 }
 
 .cart-button:hover {
-  /* box-shadow: black 0px 0px 5px; */
-  /* transform: var(--transform-scale-2); */
   cursor: pointer;
   animation: pulse 1s infinite;
 }
@@ -376,7 +374,8 @@ h4 {
     background-color: var(--button-color);
     border: 1px solid var(--button-color);
     font-family: var(--font-family-header);
-    font-size: .5rem;
+    font-size: .3rem;
+    color: white;
     border-radius: var(--large-rounded-corner);
     display: flex;
     flex-direction: row;
@@ -385,14 +384,14 @@ h4 {
     justify-content: center;
     margin: 1rem;
     gap: .5rem;
-    padding: 1rem;
-    color: var(--main-font-color);
+    padding: .5rem;
     cursor: pointer;
     box-shadow: black 0px 0px 2px;
   }
 
   button:hover {
     box-shadow: black 0px 0px 5px;
+    animation: pulse 1s infinite;
   }
 }
 
