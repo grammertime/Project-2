@@ -53,29 +53,29 @@
     </header>
 
     <!-- Main Product Page Content -->
-    <main class="bg-[#f8f9fa] h-[175vh] flex flex-col margin-0 p-0">
+    <main class="bg-[#f8f9fa] h-[175vh] flex flex-col margin-0 p-0 pt-15">
         <!-- Overall container for all product page content -->
-        <section class="card-container flex h-[46%] flex-nowrap justify-center flex-row p-20 pt-28 gap-8">
+        <section class="card-container h-[46%] p-20 pt-20 gap-8 w-full border-solid border-blue-500 border-4">
             <!-- Product image -->
             <div class="product-img-card">
-                <img src="./Images/happy-cola.png" alt="Haribo Gold Bears" width=350px height=auto>
+                <img src="./Images/happy-cola.png" alt="Haribo Gold Bears" width=350px height=auto class="">
             </div>
             <!-- Product information, quantity, and options -->
-            <section class="interactive-container flex flex-col justify-evenly items-center gap-1 w-2/4">
-                <div class="product-info-card flex flex-row w-full">
-                    <div class="description-card flex flex-col justify-items-center items-start text-center w-full p-4 gap-4">
-                        <h1 class="text-[2rem] font-[150] text-center">Happy-Cola</h1>
+            <section class="interactive-container w-full">
+                <div class="product-info-card w-full">
+                    <div class="description-card w-full p-4 gap-4">
+                        <h1 class="text-[2rem] font-[150]">Happy-Cola</h1>
                         <p>Treat yourself to a fan favorite! Bundle and save!</p>
                     </div>
                 </div>
                 <!-- Price Container and add to cart -->
-                <div class="review-price-card flex flex-row justify-items-center items-center w-full">
-                    <div class="price-container flex flex-row justify-center items-center w-full">
-                        <div class="price-card flex flex-row justify-center items-center w-full">
+                <div class="review-price-card w-full">
+                    <div class="price-container w-full">
+                        <div class="price-card">
                             $1.99
                         </div>
-                        <div class="reviews-card flex flex-row flex-wrap justify-center items-center w-full gap-1">
-                            <div class="review-container w-full justify-center items-center">
+                        <div class="reviews-card w-full gap-1">
+                            <div class="star-container w-full">
                                 <!-- Using Font Awesome classic solid star icons and empty star icons as the stars for the reviews -->
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
@@ -86,11 +86,11 @@
                         </div>
                     </div>
                     <!-- Using Font Awesome add-to-cart icon as the shopping cart to add to cart -->
-                    <button tabindex="6" class="cart-button flex justify-center items-center w-full"><div class="add-to-cart-icon flex justify-center"><i class="fa-solid fa-cart-shopping"></i></div>
+                    <button tabindex="6" class="cart-button w-full"><div class="add-to-cart-icon"><i class="fa-solid fa-cart-shopping"></i></div>
                     </button>
                 </div>
                 <!-- Quantity Selector with cards of options for quantity -->
-                <div class="quantity-container flex flex-col w-full gap-4 flex-wrap">
+                <div class="quantity-container w-full gap-4">
                     <div class="quantity-selector-container flex flex-row justify-center items-center w-full flex-wrap gap-4">
                         <div id="pack-of-3">
                             <img src="./Images/pack-of-3.png" alt="3 Pack of Gummies" width=125px height=auto tabindex="7">
