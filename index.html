@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 1</title>
+    <title>Haribo - Happy-Cola</title>
     <link rel="stylesheet" href="./styles.css">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+    <script src="./functions.js"></script>
 
     <!-- Initializing Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,16 +27,20 @@
 <body>
     <!-- Header Section -->
     <header class="header-container w-full flex flex-col">
-        <div class="header top-0 flex flex-row justify-between items-center pt-5 px-8 py-[1rem]">
+        <div class="header top-0 flex flex-row justify-between items-center gap-10 pt-5 px-8 py-[1rem]">
             <div class="logo p-0 w-55">
-                <a href="./index.html" tabindex="1"><img class="haribo-logo w-55 h-auto object-cover"src="./Images/Haribo-logo.png" alt="Haribo Logo"></a>
+                <a href="./index.html" tabindex="1"><img class="haribo-logo h-auto object-cover"src="./Images/Haribo-logo.png" alt="Haribo Logo"></a>
             </div>
-            <div class="nav-bar flex gap-20 p-4 items-center justify-around text-[#353238] text-[.75rem]">
+            <div class="nav-bar flex flex-row gap-20 p-3 m-0 items-center justify-between text-[#353238] text-[.75rem]">
+                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
                 <!-- Couldn't figure out how I wanted this section, because I wanted to use a nav tag, but I couldn't figure out how to use it with the flexbox formatting. So I asked Copilot "Can I add a hrefs to the h2 tags in the nav-bar div?" and it provided me with this as an option. -->
-                <div class="nav-bar-links flex flex-row gap-20 p">
-                    <a href="./index.html" tabindex="2"><h2>Products</h2></a>
-                    <a href="./index.html" tabindex="3"><h2>About Us</h2></a>
-                    <a href="./index.html" tabindex="4"><h2>Contact</h2></a>
+                <div id="myLinks">
+                    <a class=""href="./index.html" tabindex="2"><h2>Products</h2></a>
+                    <a class="w-30"href="./index.html" tabindex="3"><h2>About Us</h2></a>
+                    <a class=""href="./index.html" tabindex="4"><h2>Contact</h2></a>
                 </div>
                 <div class="shopping-cart-container flex justify-center h-16">
                     <a href="./index.html" tabindex="5"><div class="shopping-cart-icon flex justify-center items-center w-8">
@@ -56,7 +61,7 @@
     </header>
 
     <!-- Main Product Page Content -->
-    <main class="bg-[#f8f9fa] h-[195vh] flex flex-col margin-0 p-0 pt-15">
+    <main class="bg-[#f8f9fa] h-auto flex flex-col margin-0 p-0 pt-15">
         <!-- Overall container for all product page content -->
         <section class="card-container h-[46%] p-20 pt-5 w-full">
             <!-- Product image -->
@@ -110,7 +115,9 @@
 
         <!-- Suggested Products section -->
         <section class="related-products-section flex flex-col justify-center items-center gap-10">
-            <h2>Customers who bought Happy-Cola also bought:</h2>
+            <div class="flex flex-col justify-center items-center gap-10 pb-10 pl-10 pr-10">
+                <h2>Customers who bought Happy-Cola also bought:</h2>
+            </div>
             <div class="related-products-container">
                 <div class="related-products-card"><img src="./Images/goldbears-clip.png" alt="Goldbears" tabindex="10">
                 </div>
@@ -124,10 +131,10 @@
                 </div>
                 <div class="related-products-card"><img src="./Images/red-white-blue-clip.png" alt="Red, White, and Blue Gummis" tabindex="15">
                 </div>
-                <!-- <div class="related-products-card"><img src="./Images/fizzy-cola-clip.png" alt="Fizzy Cola" tabindex="16">
-                </div> -->
             </div>
-            <h2>Also, don't wait! Check out our NEW limited edition FOOTBALL MIX while it's still football season!</h2>
+            <div class="flex flex-col justify-center items-center gap-10 pb-10">
+                <h2>Also, don't wait! Check out our NEW limited edition FOOTBALL MIX while it's still football season!</h2>
+            </div>
             <div class="limited-edition-product-container flex flex-row justify-around align-center p-4 m-0 m-auto w-fit">
                 <img src="./Images/football-mix-clip.png" alt="Football Mix" tabindex="17">
             </div>
