@@ -59,6 +59,18 @@
   }
 }
 
+@keyframes lightPulse {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.1;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
 @keyframes scaleRotate {
   0% {
     transform: scale(1);
@@ -102,6 +114,14 @@ html, body {
   h2:hover {
     transform: var(--transform-scale);
   }
+}
+
+.haribo-logo {
+  transition: transform 1.1s ease-in-out;
+}
+
+.haribo-logo:hover {
+  animation: lightPulse 1.1s ease-in-out infinite;
 }
 
 .nav-bar-links {
@@ -226,7 +246,7 @@ main {
   padding: 2rem;
   box-shadow: var(--button-color) 0px 0px 10px;
   display: grid;
-  justify-self: right;
+  /* justify-self: right; */
   margin-right: 1rem;
   grid-area: 1 / 1 / 2 / 2;
   
@@ -428,16 +448,23 @@ h4 {
 /* Formatting related products section to have good layout */
 .related-products-container {
   display: flex;
-  background-color: var(--button-color);
   padding: 1rem;
-  border-radius: var(--med-rounded-corner);
+  margin: 0 auto;
+  width: fit-content;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   gap: 2rem;
   flex-wrap: wrap;
+}
+
+.related-products-card {
+  background-color: var(--button-color);
+  border-radius: var(--med-rounded-corner);
   box-shadow: var(--main-box-shadow-light);
-  /* border: 5px solid purple; */
+  padding: 1rem;
+  margin: 0 auto;
+  width: fit-content;
 
   img {
     height: 210px;
@@ -447,10 +474,11 @@ h4 {
 
   img:hover {
     animation: scaleRotate .3s ease-in-out forwards;
+    cursor: pointer;
   }
 }
 
-/* Formatting with Carlito */
+/* Formatting */
 .limited-edition-product {
   font-family: var(--font-family-header);
 }
@@ -469,6 +497,7 @@ h4 {
 
   img:hover {
     animation: scaleRotate .3s ease-in-out forwards;
+    cursor: pointer;
   }
 }
 
