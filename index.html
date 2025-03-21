@@ -16,6 +16,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Capriola&family=Irish+Grover&display=swap" rel="stylesheet">
 
+    <!-- Initializing Hamburger Menu -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Initializing Font Awesome -->
     <script src="https://kit.fontawesome.com/abb2e2c90b.js" crossorigin="anonymous"></script>
 </head>
@@ -25,7 +28,7 @@
     <header class="header-container w-full flex flex-col">
         <div class="header top-0 flex flex-row justify-between items-center pt-5 px-8 py-[.25rem]">
             <div class="logo p-0 w-55">
-                <a href="./index.html" tabindex="1"><img class="w-55 h-auto object-cover"src="./Images/Haribo-logo.png" alt="Haribo Logo"></a>
+                <a href="./index.html" tabindex="1"><img class="haribo-logo w-55 h-auto object-cover"src="./Images/Haribo-logo.png" alt="Haribo Logo"></a>
             </div>
             <div class="nav-bar flex gap-20 p-4 items-center justify-around text-[#353238] text-[.75rem]">
                 <!-- Couldn't figure out how I wanted this section, because I wanted to use a nav tag, but I couldn't figure out how to use it with the flexbox formatting. So I asked Copilot "Can I add a hrefs to the h2 tags in the nav-bar div?" and it provided me with this as an option. -->
@@ -55,60 +58,56 @@
     <!-- Main Product Page Content -->
     <main class="bg-[#f8f9fa] h-[175vh] flex flex-col margin-0 p-0 pt-15">
         <!-- Overall container for all product page content -->
-        <section class="card-container h-[46%] p-20 pt-20 gap-8 w-full border-solid border-blue-500 border-4">
+        <section class="card-container h-[46%] p-20 pt-5 w-full">
             <!-- Product image -->
             <div class="product-img-card">
                 <img src="./Images/happy-cola.png" alt="Haribo Gold Bears" width=350px height=auto class="">
             </div>
             <!-- Product information, quantity, and options -->
-            <section class="interactive-container w-full">
+            <section class="product-info-container">
                 <div class="product-info-card w-full">
-                    <div class="description-card w-full p-4 gap-4">
+                    <div class="description-card flex flex-col w-full p-4 gap-4">
                         <h1 class="text-[2rem] font-[150]">Happy-Cola</h1>
-                        <p>Treat yourself to a fan favorite! Bundle and save!</p>
+                        <h2>Treat yourself to a fan favorite! Bundle and save!</h2>
                     </div>
                 </div>
+
                 <!-- Price Container and add to cart -->
-                <div class="review-price-card w-full">
-                    <div class="price-container w-full">
-                        <div class="price-card">
-                            $1.99
-                        </div>
-                        <div class="reviews-card w-full gap-1">
-                            <div class="star-container w-full">
-                                <!-- Using Font Awesome classic solid star icons and empty star icons as the stars for the reviews -->
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-regular fa-star"></i>
-                            </div>
-                        </div>
+                <div class="price-container">
+                    <div class="price-card">
+                        $1.99
                     </div>
-                    <!-- Using Font Awesome add-to-cart icon as the shopping cart to add to cart -->
-                    <button tabindex="6" class="cart-button w-full"><div class="add-to-cart-icon"><i class="fa-solid fa-cart-shopping"></i></div>
-                    </button>
+                    <!-- Star rating for the product -->
+                    <div class="star-container">
+                        <!-- Using Font Awesome classic solid star icons and empty star icons as the stars for the reviews -->
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
                 </div>
+
+                <!-- Using Font Awesome add-to-cart icon as the shopping cart to add to cart -->
+                <button tabindex="6" class="cart-button w-full"><div class="add-to-cart-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                </button>
+                
                 <!-- Quantity Selector with cards of options for quantity -->
-                <div class="quantity-container w-full gap-4">
-                    <div class="quantity-selector-container flex flex-row justify-center items-center w-full flex-wrap gap-4">
-                        <div id="pack-of-3">
-                            <img src="./Images/pack-of-3.png" alt="3 Pack of Gummies" width=125px height=auto tabindex="7">
-                            <p>3 Pack</p>
-                        </div>
-                        <div id="pack-of-6">
-                            <img src="./Images/pack-of-6.png" alt="6 Pack of Gummies" width=200px height=auto tabindex="8">
-                            <p>6 Pack</p>
-                        </div>
-                        <div id="pack-of-24">
-                            <img src="./Images/pack-of-24.png" alt="24 Pack of Gummies" width=100px height=auto tabindex="9">
-                            <p>24 Pack</p>
-                        </div>
-                    </div>
+                <div id="pack-of-3">
+                    <img src="./Images/pack-of-3.png" alt="3 Pack of Gummies" width=125px height=auto tabindex="7">
+                    <p>3 Pack</p>
+                </div>
+                <div id="pack-of-6">
+                    <img src="./Images/pack-of-6.png" alt="6 Pack of Gummies" width=200px height=auto tabindex="8">
+                    <p>6 Pack</p>
+                </div>
+                <div id="pack-of-24">
+                    <img src="./Images/pack-of-24.png" alt="24 Pack of Gummies" width=100px height=auto tabindex="9">
+                    <p>24 Pack</p>
                 </div>
             </section>
         </section>
-        
+
         <!-- Suggested Products section -->
         <section class="related-products-section flex flex-col justify-center items-center gap-10">
             <h2>Customers who bought Happy-Cola also bought:</h2>
