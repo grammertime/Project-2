@@ -100,6 +100,7 @@ html, body {
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* Header container styles */
@@ -468,7 +469,9 @@ h4 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   padding: 1rem;
-  margin: 0 auto;
+  margin: 0 auto 4rem auto;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   gap: 2rem;
 }
@@ -499,11 +502,26 @@ h4 {
   font-family: var(--font-family-header);
 }
 
-/* Formatting with vars */
 .limited-edition-product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 1rem;
+  margin: 0 auto 4rem auto;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
+
+/* Formatting with vars */
+.limited-edition-product-card {
   background-color: var(--button-color);
   border-radius: var(--med-rounded-corner);
   box-shadow: var(--main-box-shadow-light);
+  display: grid;
+  padding: 1rem;
+  margin: 0 auto;
+  width: fit-content;
 
   img {
     height: 210px;
