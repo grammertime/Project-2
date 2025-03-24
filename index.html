@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="./styles.css">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-    <script src="./functions.js"></script>
 
     <!-- Initializing Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,22 +25,25 @@
 
 <body>
     <!-- Header Section -->
-    <header class="header-container w-full flex flex-col">
+    <!-- UTD Presentation: I used the Remove.bg website for all my images on the page. Super helpful.  -->
+    <!-- UTD Presentation: I used the Gradients website for the header of my webpage, as well as the footer. -->
+    <header id="top" class="header-container w-full flex flex-col">
         <div class="header top-0 flex flex-row justify-between items-center gap-10 pt-5 px-8 py-[1rem]">
             <div class="logo p-0 w-55">
-                <a href="./index.html" tabindex="1"><img class="haribo-logo h-auto object-cover"src="./Images/Haribo-logo.png" alt="Haribo Logo"></a>
+                <a href="./index.html" class="active" tabindex="1"><img class="haribo-logo h-auto object-cover" src="./Images/Haribo-logo.png" alt="Haribo Logo"></a>
             </div>
             <div class="nav-bar flex flex-row gap-20 p-3 m-0 items-center justify-between text-[#353238] text-[.75rem]">
+                <!-- Couldn't figure out how I wanted this section, because I wanted to use a nav tag, but I couldn't figure out how to use it with the flexbox formatting. So I asked Copilot "Can I add a hrefs to the h2 tags in the nav-bar div?" and it provided me with this as an option. -->
+                <nav id="myLinks">
+                    <a class="" href="./index.html" tabindex="2"><h2>Products</h2></a>
+                    <a class="w-30" href="./index.html" tabindex="3"><h2>About Us</h2></a>
+                    <a class="" href="./index.html" tabindex="4"><h2>Contact</h2></a>
+                </nav>
+                <!-- OPTIONAL ELEMENT - HAMBURGER MENU: this disappears unless it's in the tablet or phone screen size. -->
                 <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
                 </a>
-                <!-- Couldn't figure out how I wanted this section, because I wanted to use a nav tag, but I couldn't figure out how to use it with the flexbox formatting. So I asked Copilot "Can I add a hrefs to the h2 tags in the nav-bar div?" and it provided me with this as an option. -->
-                <div id="myLinks">
-                    <a class=""href="./index.html" tabindex="2"><h2>Products</h2></a>
-                    <a class="w-30"href="./index.html" tabindex="3"><h2>About Us</h2></a>
-                    <a class=""href="./index.html" tabindex="4"><h2>Contact</h2></a>
-                </div>
                 <div class="shopping-cart-container flex justify-center h-16">
                     <a href="./index.html" tabindex="5"><div class="shopping-cart-icon flex justify-center items-center w-8">
                         <!-- Using Font Awesome shopping-cart as main shopping cart -->
@@ -49,7 +51,7 @@
                     </a>
                 </div>
                 <div class="mascot-icon">
-                    <img src="./Images/haribo-bear.png" alt="Haribo Bear" width=40px height=auto>
+                    <img src="./Images/haribo-bear.png" alt="Haribo Bear">
                 </div>
             </div>
         </div>
@@ -63,7 +65,7 @@
     <!-- Main Product Page Content -->
     <main class="bg-[#f8f9fa] h-auto flex flex-col margin-0 p-0 pt-15">
         <!-- Overall container for all product page content -->
-        <section class="card-container h-[46%] p-20 pt-5 w-full">
+        <div class="card-container h-[46%] p-20 pt-5 w-full">
             <!-- Product image -->
             <div class="product-img-card">
                 <img src="./Images/happy-cola.png" alt="Haribo Gold Bears">
@@ -94,28 +96,31 @@
                 </div>
 
                 <!-- Using Font Awesome add-to-cart icon as the shopping cart to add to cart -->
-                <button tabindex="6" class="cart-button w-full"><div class="add-to-cart-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                <button tabindex="6" class="cart-button w-full"><span class="add-to-cart-icon"><i class="fa-solid fa-cart-shopping"></i></span>
                 </button>
                 
                 <!-- Quantity Selector with cards of options for quantity -->
-                <div id="pack-of-3">
-                    <img src="./Images/pack-of-3.png" alt="3 Pack of Gummies" width=125px height=auto tabindex="7">
-                    <p>3 Pack</p>
+                <div class="quantity-selector flex flex-row justify-center items-center gap-10">
+                    <div id="pack-of-3">
+                        <img src="./Images/pack-of-3.png" alt="3 Pack of Gummies" width="125" tabindex="7">
+                        <p>3 Pack</p>
+                    </div>
+                    <div id="pack-of-6">
+                        <img src="./Images/pack-of-6.png" alt="6 Pack of Gummies" width="200" tabindex="8">
+                        <p>6 Pack</p>
+                    </div>
+                    <div id="pack-of-24">
+                        <img src="./Images/pack-of-24.png" alt="24 Pack of Gummies" width="100" tabindex="9">
+                        <p>24 Pack</p>
+                    </div>
                 </div>
-                <div id="pack-of-6">
-                    <img src="./Images/pack-of-6.png" alt="6 Pack of Gummies" width=200px height=auto tabindex="8">
-                    <p>6 Pack</p>
-                </div>
-                <div id="pack-of-24">
-                    <img src="./Images/pack-of-24.png" alt="24 Pack of Gummies" width=100px height=auto tabindex="9">
-                    <p>24 Pack</p>
-                </div>
+                
             </section>
-        </section>
+        </div>
 
         <!-- Suggested Products section -->
         <section class="related-products-section flex flex-col justify-center items-center gap-10">
-            <div class="flex flex-col justify-center items-center gap-10 pb-10 pl-10 pr-10">
+            <div class="related-products-header flex flex-col justify-center items-center gap-10 pb-10 pl-10 pr-10">
                 <h2>Customers who bought Happy-Cola also bought:</h2>
             </div>
             <div class="related-products-container">
@@ -136,71 +141,71 @@
                 <div class="related-products-card"><img src="./Images/football-mix-clip.png" alt="Football Mix" tabindex="17">
                 </div>
             </div>
-            <div class="flex flex-col justify-center items-center gap-10 pb-10 pl-10 pr-10">
+            <div class="limited-edition-header flex flex-col justify-center items-center gap-10 pb-10 pl-10 pr-10">
                 <h2>Also, don't wait! Check out our NEW limited edition HARRY POTTER line of gummies while supplies last!</h2>
             </div>
             <div class="limited-edition-product-container">
                 <div class="limited-edition-product-card"><img src="./Images/harry-potter.png" alt="Hermione Granger" tabindex="17"></div>
-                <div class="limited-edition-product-card"><img src="./Images/harry-potter-2.png" alt="Ron Weasley"></div>
-                <div class="limited-edition-product-card"><img src="./Images/harry-potter-3.png" alt="Harry Potter"></div>
+                <div class="limited-edition-product-card"><img src="./Images/harry-potter-2.png" alt="Ron Weasley" tabindex="18"></div>
+                <div class="limited-edition-product-card"><img src="./Images/harry-potter-3.png" alt="Harry Potter" tabindex="19"></div>
             </div>
         </section>
     </main>
 
     <!-- Looping Gummie Bear Video -->
-    <section class="video-container w-full flex flex-col justify-center items-center">
-        <video class="gummie-bear-video object-cover" width=100% height=auto loop muted autoplay>
-            <source src="./Images/gummy-bear-vid.mp4" type="video/mp4" alt="Looping Gummie Bear Video">
+    <div class="video-container w-full flex flex-col justify-center items-center">
+        <video class="gummie-bear-video object-cover w-full" loop muted autoplay>
+            <source src="./Images/gummy-bear-vid.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-    </section>
+    </div>
 
     <!-- Contact Us Form - had ChatGPT provide me with the general layout for this, and then I edited it. ChatGPT actually provided very bare bones, I added all of the divs, the formatting, and the customization as far as inputs go. So I should have just coded this whole section myself but it did give me a good start. -->
     <section class="contact-form-container w-full flex flex-col justify-center items-center p-7 gap-4">
-        <h2>Contact Us</h2>
+        <h2 id="contact-us-form">Contact Us</h2>
         <p>Have a question or comment? Fill out the form below and we'll get back to you as soon as possible!</p>
-        <div class="contact-form-subcontainer flex flex-row gap-16 align-center justify-center">
-            <form action="#" method="post">
+        <div class="contact-form-subcontainer flex flex-row gap-16 align-center justify-center w-fit">
+            <form action="#" method="post" role="form" aria-labelledby="contact-us-form" class="contact-form w-max flex flex-col justify-center items-center gap-4">
                 <div class="contact-form w-max flex flex-col justify-center items-center gap-4">
-                    <div class="full-name bg-blue-50 rounded-md w-full">
-                        <label class="font-bold mb-2" for="name"></label>
-                        <input class="w-full" type="text" id="name" name="name" placeholder="Full name" required tabindex="18">
+                    <div class="full-name bg-blue-50 rounded-md w-full flex flex-row gap-1">
+                        <label class="font-bold w-fit" for="name">Name:</label>
+                        <input class="w-full" type="text" id="name" name="name" placeholder="Full name" required tabindex="20" aria-required="true">
                     </div>
                     
-                    <div class="email bg-blue-50 rounded-md w-full">
-                        <label class="font-bold mb-2" for="email"></label>
-                        <input class="w-full" type="email" id="email" name="email" placeholder="Email address" required tabindex="19">
+                    <div class="email bg-blue-50 rounded-md w-full flex flex-row align-center justify-center gap-1">
+                        <label class="font-bold" for="email">Email:</label>
+                        <input class="w-full" type="email" id="email" name="email" placeholder="Email address" required tabindex="21" aria-required="true">
                     </div>
                 
-                    <div class="phone bg-blue-50 rounded-md w-full">
-                        <label class="font-bold mb-2" for="phone"></label>
-                        <input class="w-full" type="tel" id="phone" name="phone" placeholder="Phone number" tabindex="20">
+                    <div class="phone bg-blue-50 rounded-md w-full flex flex-row align-center justify-center">
+                        <label class="font-bold" for="phone">Phone number:</label>
+                        <input class="w-full" type="tel" id="phone" name="phone" placeholder="Phone number" tabindex="22">
                     </div>
     
-                    <div class="message bg-blue-50 rounded-md w-full">
-                        <label class="font-bold mb-2" for="message"></label>
+                    <div class="message bg-blue-50 rounded-md w-full flex flex-col align-center justify-center">
+                        <label class="font-bold" for="message">Type your message:</label>
                         <div class="message-content w-full">
-                            <textarea class="w-full" id="message" name="message" placeholder="Your message here" rows="4" tabindex="21"></textarea>
+                            <textarea class="w-full" id="message" name="message" placeholder="Your message here" rows="4" required tabindex="23" aria-required="true"></textarea>
                         </div>
                     </div>
                 
-                    <div class="subscribe w-full">
-                        <label class="font-bold mb-2" for="subscribe">
-                            <input type="checkbox" id="subscribe" name="subscribe" tabindex="22"> Subscribe to our newsletter
+                    <div class="subscribe w-full flex flex-row align-center justify-center">
+                        <label class="font-bold" for="subscribe">
+                            <input type="checkbox" id="subscribe" name="subscribe" tabindex="24"> Subscribe to our newsletter
                         </label>
                     </div>
+                    <button class="flex flex-col align-center justify-center" type="submit" tabindex="25" aria-label="Send Message">Send Message</button>
                 </div>
             </form>
             <div class="animated-svg">
                 <dotlottie-player src="https://lottie.host/8acaf845-e119-4494-afbd-7bc623fd74be/cFt7bu4M6Y.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
             </div>
         </div>
-        <button type="submit" tabindex="23">Send Message</button>
     </section>
     
     <!-- Scroll to top button -->
     <div class="scroll-to-top fixed bottom-[40px] right-[40px]">
-        <a href="#top" tabindex="25"><i class="fa-regular fa-circle-up"></i></a>
+        <a href="#top" tabindex="27"><i class="fa-regular fa-circle-up"></i></a>
     </div>
 
     <!-- Footer Section -->
@@ -216,16 +221,19 @@
                     <p>&copy; 2025 Haribo. All Rights Reserved.</p>
                 </div>
                 <div class="footer-logo p-0 w-fit">
-                    <a href="./index.html" tabindex="24">
-                        <img src="./Images/Haribo-logo.png" alt="Haribo Logo" width=150px height=50px>
+                    <a href="./index.html" tabindex="26">
+                        <img src="./Images/Haribo-logo.png" alt="Haribo Logo" width="150" height="50">
                     </a>
                 </div>
                 <div class="footer-mascot">
-                    <img src="./Images/haribo-bear.png" alt="Haribo Bear" width=40px height=auto>
+                    <img src="./Images/haribo-bear.png" alt="Haribo Bear" width="40">
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> 
+    
+    <!-- JavaScript for Hamburger Menu -->
+    <script src="./functions.js"></script>
 </body>
 </html>
 
