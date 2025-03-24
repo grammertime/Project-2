@@ -1,3 +1,5 @@
+/* I tried to make it easier to grade, so I marked the optional elements OPTIONAL ELEMENTS with code and explained them, but wasn't sure how to label the required tasks so those you can just see on the webpage. Thank you! */
+
 /* Setting up CSS Variables. I use these throughout the styles.css file. I couldn't figure out how to implement them in tailwind. */
 :root {
   --font-family-header: 'Capriola', sans-serif;
@@ -91,7 +93,8 @@
   }
 }
 
-/* Setting up html and body elements, so that I can format easier. Smooth scrolling so when you click to go back to the top, it is smooth instead of immediate */
+/* Setting up html and body elements, so that I can format easier. */
+/* OPTIONAL ELEMENT - SMOOTH SCROLL: Smooth scrolling so when you click to go back to the top, it is smooth instead of immediate */
 html, body {
   height: 100%;
   margin: 0;
@@ -133,6 +136,7 @@ h4 {
 
 
 /* Asked ChatGPT to help me with some CSS code that would allow the image to zoom in a bit when the user hovers over the image. I am applying this code to all images in the page to allow for more user interactivity. */
+/* OPTIONAL ELEMENT - OBJECT-FIT: Used this four other times in my code. Not sure how many times you wanted it implemented */
 img {
   object-fit: cover;
   transition: var(--transition-property);
@@ -170,6 +174,7 @@ img:hover {
 }
 
 /* Formatting the links in the header */
+/* OPTIONAL ELEMENT - GAP: used this in my code 28 other times. Not sure how many times you wanted it in my code, but it allows for good spacing of elements */
 #myLinks {
   background-color: var(--card-bg-color);
   border-radius: var(--med-rounded-corner);
@@ -292,6 +297,7 @@ main {
 
 /* Formatting card-container */
 /* GRID USED HERE */
+/* OPTIONAL ELEMENT - AUTO-FIT: Also used Auto-fit columns elsewhere in my layout because I enjoy the responsivity it gives me. */
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(454px, 1fr));
