@@ -33,7 +33,7 @@
                 <!-- OPTIONAL ELEMENT - TABINDEX: all the interactive elements are tabbable in the page. -->
                 <a href="./index.html" class="active" tabindex="1"><img class="haribo-logo h-auto object-cover" src="./Images/Haribo-logo.png" alt="Haribo Logo"></a>
             </div>
-            <div class="nav-bar flex flex-row gap-20 p-3 m-0 items-center justify-between text-[#353238] text-[.75rem]">
+            <div class="nav-bar flex flex-row gap-20 p-3 m-0 items-center justify-between text-[.75rem]">
                 <!-- Couldn't figure out how I wanted this section, because I wanted to use a nav tag, but I couldn't figure out how to use it with the flexbox formatting. So I asked Copilot "Can I add a hrefs to the h2 tags in the nav-bar div?" and it provided me with this as an option. -->
                 <nav id="myLinks">
                     <a class="" href="./index.html" tabindex="2"><h2>Products</h2></a>
@@ -64,7 +64,7 @@
     </header>
 
     <!-- Main Product Page Content -->
-    <main class="bg-[#f8f9fa] h-auto flex flex-col margin-0 p-0 pt-15">
+    <main class="h-auto flex flex-col margin-0 p-0 pt-15">
         <!-- Overall container for all product page content -->
         <div class="card-container h-[46%] p-20 pt-5 w-full">
             <!-- Product image -->
@@ -168,25 +168,25 @@
         <div class="contact-form-subcontainer flex flex-row gap-16 align-center justify-center w-fit">
             <form action="#" method="post" role="form" aria-labelledby="contact-us-form" class="contact-form w-max flex flex-col justify-center items-center gap-4">
                 <div class="contact-form w-max flex flex-col justify-center items-center gap-4">
-                    <div class="full-name bg-blue-50 rounded-md w-full flex flex-row gap-1">
-                        <label class="font-bold w-fit" for="name">Name:</label>
-                        <input class="w-full" type="text" id="name" name="name" placeholder="Full name" required tabindex="20" aria-required="true">
+                    <div class="full-name rounded-md w-full flex flex-col gap-1">
+                        <label class="font-bold w-fit" for="name">Full name:</label>
+                        <input class="same-background w-full" type="text" id="name" name="name" placeholder="Enter your name" required tabindex="20" aria-required="true">
                     </div>
                     
-                    <div class="email bg-blue-50 rounded-md w-full flex flex-row align-center justify-center gap-1">
-                        <label class="font-bold" for="email">Email:</label>
-                        <input class="w-full" type="email" id="email" name="email" placeholder="Email address" required tabindex="21" aria-required="true">
+                    <div class="email rounded-md w-full flex flex-col align-center justify-center gap-1">
+                        <label class="font-bold" for="email">Email address:</label>
+                        <input class="same-background w-full" type="email" id="email" name="email" placeholder="Enter your email" required tabindex="21" aria-required="true">
                     </div>
                 
-                    <div class="phone bg-blue-50 rounded-md w-full flex flex-row align-center justify-center">
+                    <div class="phone rounded-md w-full flex flex-col align-center justify-center">
                         <label class="font-bold" for="phone">Phone number:</label>
-                        <input class="w-full" type="tel" id="phone" name="phone" placeholder="Phone number" tabindex="22">
+                        <input class="same-background w-full" type="tel" id="phone" name="phone" placeholder="Enter your number" tabindex="22">
                     </div>
     
-                    <div class="message bg-blue-50 rounded-md w-full flex flex-col align-center justify-center">
+                    <div class="message rounded-md w-full flex flex-col align-center justify-center">
                         <label class="font-bold" for="message">Type your message:</label>
-                        <div class="message-content w-full">
-                            <textarea class="w-full" id="message" name="message" placeholder="Your message here" rows="4" required tabindex="23" aria-required="true"></textarea>
+                        <div class="message-content same-background w-full">
+                            <textarea class="w-full" id="message" name="message" placeholder="Enter your message here" rows="4" required tabindex="23" aria-required="true"></textarea>
                         </div>
                     </div>
                 

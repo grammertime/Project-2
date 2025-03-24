@@ -7,6 +7,10 @@
   --card-bg-color: white;
   --button-color: #FF9902;
   --main-bg-color: #F9F9F9;
+  --content-bg-color: #f8f9fa;
+  --contact-form-bg-color: #E3F2FD;
+  --nav-bar-text-color: #353238;
+  --nav-bar-shopping-cart: black;
   --box-shadow-light: black 0px 0px 4px 0px;
   --main-box-shadow-light: #FF9902 0px 0px 4px 0px;
   --transition-property: transform 0.3s ease-in-out;
@@ -106,7 +110,6 @@ html, body {
   overflow-x: hidden;
 }
 
-
 /* Formatting all h2s */
 h2 {
   font-size: 1.5rem;
@@ -195,6 +198,11 @@ img:hover {
   }
 }
 
+/* Setting nav bar text color */
+.nav-bar {
+  color: var(--nav-bar-text-color);
+}
+
 /* Asked Copilot how to format these a tags because I forgot how to simply remove decorations of blue color and underline. This is what it gave me. */
 .nav-bar a {
   text-decoration: none;
@@ -232,7 +240,7 @@ img:hover {
 
 /* Formatting shopping-cart svg */
 .shopping-cart-icon i {
-  color: var(--main-font-color);
+  color: var(--nav-bar-shopping-cart);
   font-size: 1.5rem;
 }
 
@@ -256,6 +264,8 @@ img:hover {
   width: 100%;
   overflow: hidden;
   line-height: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .custom-shape-divider-bottom-1742328424 svg {
@@ -267,32 +277,17 @@ img:hover {
 }
 
 .custom-shape-divider-bottom-1742328424 .shape-fill {
-  fill: var(--main-bg-color);
-}
-
-.custom-shape-divider-top-1742326942 {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
+  fill: var(--content-bg-color);
+  margin: 0;
+  padding: 0;
   overflow: hidden;
-  line-height: 0;
-}
-
-.custom-shape-divider-top-1742326942 svg {
-  position: relative;
-  display: block;
-  width: calc(144% + 1.3px);
-  height: 66px;
-}
-
-.custom-shape-divider-top-1742326942 .shape-fill {
-  fill: #FFFFFF;
 }
 
 /* Main Product Page Styling */
 main {
   color: var(--main-font-color);
+  margin: 0;
+  background-color: var(--content-bg-color);
 }
 
 /* Formatting card-container */
@@ -373,7 +368,7 @@ main {
   width: 100%;
   font-family: var(--font-family-header);
   font-size: 1.5rem;
-  color: white;
+  color: var(--card-bg-color);
 }
 
 .star-container {
@@ -383,7 +378,7 @@ main {
 }
 
 .star-container i {
-  color: white;
+  color: var(--card-bg-color);
   font-size: 1.2rem;
 }
 
@@ -441,7 +436,7 @@ main {
   box-shadow: var(--main-box-shadow-light);
 
   p {
-    color: white;
+    color: var(--card-bg-color);
     text-align: center;
   }
 
@@ -460,7 +455,7 @@ main {
 
 /* Formatting quantity cards on hover to give some interactivity */
 #pack-of-3:hover, #pack-of-6:hover, #pack-of-24:hover {
-  box-shadow: black 0px 0px 5px;
+  box-shadow: var(--card-bg-color) 0px 0px 5px;
   color: var(--main-font-color);
 }
 
@@ -549,14 +544,15 @@ main {
 /* Formatting contact form */
 .contact-form-container {
   font-family: var(--font-family);
-  background-color: var(--card-bg-color);
+  color: var(--main-font-color);
+  background-color: var(--content-bg-color);
 
   button {
     background-color: var(--button-color);
     border: 1px solid var(--button-color);
     font-family: var(--font-family-header);
     font-size: .3rem;
-    color: white;
+    color: var(--card-bg-color);
     border-radius: var(--large-rounded-corner);
     display: flex;
     flex-direction: row;
@@ -567,17 +563,17 @@ main {
     gap: .5rem;
     padding: .5rem;
     cursor: pointer;
-    box-shadow: black 0px 0px 2px;
+    box-shadow: var(--main-font-color) 0px 0px 2px;
   }
 
   button:hover {
-    box-shadow: black 0px 0px 5px;
+    box-shadow: var(--main-font-color) 0px 0px 5px;
     animation: pulse 1s infinite;
   }
 }
 
-.full-name {
-  flex-wrap: nowrap;
+.same-background {
+  background-color: var(--contact-form-bg-color);
 }
 
 /* Formatting scroll to top svg */
@@ -591,6 +587,7 @@ main {
   transform: var(--transform-scale);
 }
 
+/* Formatting my footer */
 .footer-container {
   background: rgb(249,87,176);
   background: linear-gradient(166deg, rgba(249,87,176,1) 6%, rgba(235,125,13,1) 89%);
@@ -606,6 +603,8 @@ main {
   overflow: hidden;
   line-height: 0;
   transform: rotate(180deg);
+  margin: 0;
+  padding: 0;
 }
 
 .custom-shape-divider-top-1742328585 svg {
@@ -617,7 +616,10 @@ main {
 }
 
 .custom-shape-divider-top-1742328585 .shape-fill {
-  fill: #FFFFFF;
+  fill: var(--content-bg-color);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 /* formatting footer logo */
@@ -626,7 +628,6 @@ main {
   height: auto;
 }
 
-/* Formatting footer */
 .footer-content {
   font-family: var(--font-family);
 }
@@ -966,7 +967,7 @@ main {
   /* Hide the links inside the navigation menu (except for logo/home) */
   .nav-bar #myLinks {
     display: none;
-    color: black;
+    color: var(--main-font-color);
     h2 {
       font-size: 1.25rem;
     }
@@ -981,7 +982,7 @@ main {
 
   /* Style the hamburger menu */
   .nav-bar a.icon {
-    color: black;
+    color: var(--main-font-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1074,5 +1075,18 @@ main {
     button {
       font-size: 1.25rem;
     }
+  }
+}
+
+/* OPTIONAL ELEMENT - DARK MODE: Changing the colors to dark mode if it is toggled */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-bg-color: #131316;
+    --main-font-color: white;
+    --button-color: #f2960d;
+    --card-bg-color: black;
+    --content-bg-color: #040506;
+    --contact-form-bg-color: #03111b;
+    --nav-bar-text-color: #c9c7cc;
   }
 }
